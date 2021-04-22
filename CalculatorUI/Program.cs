@@ -17,6 +17,10 @@ namespace CalculatorUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Initialize the database connection
+            CalculatorLibrary.GlobalConfig.InitializeConnections(true, true);
+
             Application.Run(new CalculatorView());
         }
     }
