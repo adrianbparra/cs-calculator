@@ -58,6 +58,7 @@ namespace CalculatorUI
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 35);
             this.button1.TabIndex = 1;
+            this.button1.Tag = "1";
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -186,6 +187,7 @@ namespace CalculatorUI
             this.buttonEqual.TabIndex = 1;
             this.buttonEqual.Text = "=";
             this.buttonEqual.UseVisualStyleBackColor = true;
+            this.buttonEqual.Click += new System.EventHandler(this.buttonEqual_Click);
             // 
             // buttonNegPos
             // 
@@ -244,7 +246,7 @@ namespace CalculatorUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(307, 416);
+            this.ClientSize = new System.Drawing.Size(313, 416);
             this.Controls.Add(this.labelAnswer);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.buttonNegPos);
@@ -267,6 +269,7 @@ namespace CalculatorUI
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(329, 455);
             this.Name = "CalculatorView";
             this.Text = "Calculator";
             this.ResumeLayout(false);
