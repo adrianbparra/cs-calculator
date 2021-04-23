@@ -48,8 +48,9 @@ namespace CalculatorUI
             this.buttonNegPos = new System.Windows.Forms.Button();
             this.buttonPeriod = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
-            this.labelAnswer = new System.Windows.Forms.Label();
+            this.labelCalculation = new System.Windows.Forms.Label();
             this.buttonHistory = new System.Windows.Forms.Button();
+            this.labelAnswer = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -61,6 +62,7 @@ namespace CalculatorUI
             this.button1.Tag = "1";
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -70,6 +72,7 @@ namespace CalculatorUI
             this.button2.TabIndex = 1;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -79,6 +82,7 @@ namespace CalculatorUI
             this.button3.TabIndex = 1;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -88,6 +92,7 @@ namespace CalculatorUI
             this.button4.TabIndex = 1;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -97,6 +102,7 @@ namespace CalculatorUI
             this.button5.TabIndex = 1;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -106,6 +112,7 @@ namespace CalculatorUI
             this.button6.TabIndex = 1;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -115,6 +122,7 @@ namespace CalculatorUI
             this.button7.TabIndex = 1;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -124,6 +132,7 @@ namespace CalculatorUI
             this.button8.TabIndex = 1;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -133,6 +142,7 @@ namespace CalculatorUI
             this.button9.TabIndex = 1;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button0
             // 
@@ -142,6 +152,7 @@ namespace CalculatorUI
             this.button0.TabIndex = 1;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = true;
+            this.button0.Click += new System.EventHandler(this.button0_Click);
             // 
             // buttonDivision
             // 
@@ -217,19 +228,20 @@ namespace CalculatorUI
             this.buttonClear.TabIndex = 1;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // labelAnswer
+            // labelCalculation
             // 
-            this.labelAnswer.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.labelAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelAnswer.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.labelAnswer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAnswer.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.labelAnswer.Location = new System.Drawing.Point(39, 25);
-            this.labelAnswer.Name = "labelAnswer";
-            this.labelAnswer.Size = new System.Drawing.Size(234, 60);
-            this.labelAnswer.TabIndex = 1;
-            this.labelAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelCalculation.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.labelCalculation.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelCalculation.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelCalculation.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.labelCalculation.Location = new System.Drawing.Point(39, 25);
+            this.labelCalculation.Name = "labelCalculation";
+            this.labelCalculation.Size = new System.Drawing.Size(234, 27);
+            this.labelCalculation.TabIndex = 1;
+            this.labelCalculation.Text = "45+5";
+            this.labelCalculation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonHistory
             // 
@@ -241,6 +253,19 @@ namespace CalculatorUI
             this.buttonHistory.Text = "H";
             this.buttonHistory.UseVisualStyleBackColor = true;
             // 
+            // labelAnswer
+            // 
+            this.labelAnswer.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.labelAnswer.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.labelAnswer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelAnswer.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.labelAnswer.Location = new System.Drawing.Point(39, 52);
+            this.labelAnswer.Name = "labelAnswer";
+            this.labelAnswer.Size = new System.Drawing.Size(234, 37);
+            this.labelAnswer.TabIndex = 1;
+            this.labelAnswer.Text = "50";
+            this.labelAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // CalculatorView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 25F);
@@ -248,6 +273,7 @@ namespace CalculatorUI
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(313, 416);
             this.Controls.Add(this.labelAnswer);
+            this.Controls.Add(this.labelCalculation);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.buttonNegPos);
             this.Controls.Add(this.buttonPeriod);
@@ -295,8 +321,9 @@ namespace CalculatorUI
         private System.Windows.Forms.Button buttonNegPos;
         private System.Windows.Forms.Button buttonPeriod;
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.Label labelAnswer;
+        private System.Windows.Forms.Label labelCalculation;
         private System.Windows.Forms.Button buttonHistory;
+        private System.Windows.Forms.Label labelAnswer;
     }
 }
 
