@@ -162,6 +162,7 @@ namespace CalculatorUI
             this.buttonDivision.TabIndex = 1;
             this.buttonDivision.Text = "/";
             this.buttonDivision.UseVisualStyleBackColor = true;
+            this.buttonDivision.Click += new System.EventHandler(this.buttonDivision_Click);
             // 
             // buttonMultiplication
             // 
@@ -171,6 +172,7 @@ namespace CalculatorUI
             this.buttonMultiplication.TabIndex = 1;
             this.buttonMultiplication.Text = "X";
             this.buttonMultiplication.UseVisualStyleBackColor = true;
+            this.buttonMultiplication.Click += new System.EventHandler(this.buttonMultiplication_Click);
             // 
             // buttonSubtract
             // 
@@ -217,6 +219,7 @@ namespace CalculatorUI
             this.buttonPeriod.TabIndex = 1;
             this.buttonPeriod.Text = ".";
             this.buttonPeriod.UseVisualStyleBackColor = true;
+            this.buttonPeriod.Click += new System.EventHandler(this.buttonPeriod_Click);
             // 
             // buttonClear
             // 
@@ -240,7 +243,6 @@ namespace CalculatorUI
             this.labelCalculation.Name = "labelCalculation";
             this.labelCalculation.Size = new System.Drawing.Size(234, 27);
             this.labelCalculation.TabIndex = 1;
-            this.labelCalculation.Text = "45+5";
             this.labelCalculation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonHistory
@@ -263,7 +265,6 @@ namespace CalculatorUI
             this.labelAnswer.Name = "labelAnswer";
             this.labelAnswer.Size = new System.Drawing.Size(234, 37);
             this.labelAnswer.TabIndex = 1;
-            this.labelAnswer.Text = "50";
             this.labelAnswer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // CalculatorView
