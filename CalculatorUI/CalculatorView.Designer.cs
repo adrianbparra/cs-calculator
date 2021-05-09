@@ -170,7 +170,7 @@ namespace CalculatorUI
             this.buttonMultiplication.Name = "buttonMultiplication";
             this.buttonMultiplication.Size = new System.Drawing.Size(54, 35);
             this.buttonMultiplication.TabIndex = 1;
-            this.buttonMultiplication.Text = "X";
+            this.buttonMultiplication.Text = "x";
             this.buttonMultiplication.UseVisualStyleBackColor = true;
             this.buttonMultiplication.Click += new System.EventHandler(this.buttonMultiplication_Click);
             // 
@@ -182,6 +182,7 @@ namespace CalculatorUI
             this.buttonSubtract.TabIndex = 1;
             this.buttonSubtract.Text = "-";
             this.buttonSubtract.UseVisualStyleBackColor = true;
+            this.buttonSubtract.Click += new System.EventHandler(this.buttonSubtract_Click);
             // 
             // buttonAdd
             // 
@@ -191,6 +192,7 @@ namespace CalculatorUI
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = "+";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEqual
             // 

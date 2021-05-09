@@ -113,48 +113,108 @@ namespace CalculatorUI
         // each time a calc button is pressed if labelCalculation has number
         // add cacl operation
         
-        private bool ValidNumbers()
+        private void CalculateOperation(string oper)
         {   
             
-            bool output = true;
+
+            bool answerBool = labelAnswer.Text.Length > 0;
+            bool calcBool = labelCalculation.Text.Length > 0;
+
+            // if no answer and number
+            // operator should not do anything
+
+            // if both
+            // do calculation of answer and number result replace answer plus operator
 
             string[] calculation = labelCalculation.Text.Split(" ");
+            string lastNumber = labelAnswer.Text;
 
-
-            // check if there is no labelAnswer
-            if (labelAnswer.Text.Length < 1)
+            if (answerBool && calcBool)
             {
-                
-                System.Diagnostics.Debug.WriteLine("ValidNumbers");
-                output = false;
+                System.Diagnostics.Debug.WriteLine("Both");
+                decimal firstNumber = Decimal.Parse(calculation[0]);
+                string calcOper = calculation[1];
+                decimal newNumber = Decimal.Parse(lastNumber);
 
+                decimal total = 0;
+                switch (calcOper)
+                {
+                    case "+":
+                        total = firstNumber + newNumber;
+                        
+                        break;
+                    case "-":
+                        total = firstNumber - newNumber;
+                        
+                        break;
+                    case "/":
+                        total = firstNumber / newNumber;
+                        
+                        break;
+                    case "x":
+                        total = firstNumber * newNumber;
+
+                        break;
+                }
+
+                // add total plus oper
+                labelCalculation.Text = Convert.ToString(total) + " " + oper;
+                labelAnswer.Text = "";
+
+                return;
+            }
+                
+            // if calc
+            if (calcBool)
+            {
+                System.Diagnostics.Debug.WriteLine("calculation");
+
+                // replace the operator
+                calculation[calculation.Length - 1] = oper;
+
+                labelCalculation.Text = String.Join(" ",calculation);
+                labelAnswer.Text = "";
+
+                return;
             }
 
-            // check if theres is already a operation
+            // if answer
+            if (answerBool)
+            {
+                System.Diagnostics.Debug.WriteLine("answer");
+                // place number in answer plus the operator pressed
+                labelCalculation.Text = labelAnswer.Text + " " + oper;
+                labelAnswer.Text = "";
 
+                return;
+            }
 
-            return output;
         }
         private void buttonDivision_Click(object sender, EventArgs e)
         {
 
-            if (ValidNumbers())
-            {
-                // get value from lableAnswer
-                // add it to lableCalculation with the operation
-                labelCalculation.Text += " / ";
-                // clear out the lableAnswer
-            }
-           
+            CalculateOperation("/");
+            
         }
 
         private void buttonMultiplication_Click(object sender, EventArgs e)
         {
 
-            if (ValidNumbers())
-            {
-                labelCalculation.Text += " x ";
-            }
+            CalculateOperation("x");
+
+        }
+
+        private void buttonSubtract_Click(object sender, EventArgs e)
+        {
+
+            CalculateOperation("-");
+
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+
+            CalculateOperation("+");
 
         }
     }
